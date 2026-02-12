@@ -2,23 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
     <title>B&S Protética · Consultoria em Prótese Dentária</title>
-    <!-- Fonte moderna e limpa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (ícones gratuitos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ----- PALETA DE CORES ----- 
-            font principal: #737373 (texto)
-            azul 1: #1800ad
-            azul 2: #004aad
-            azul 3: #5170ff
-            fundo claro: #f8faff
-            branco: #ffffff
-        */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +17,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #737373; /* tom de texto principal */
+            color: #737373;
             background-color: #f8faff;
             line-height: 1.5;
         }
@@ -39,7 +29,7 @@
             padding: 0 24px;
         }
 
-        /* cabeçalho com espaço para logo */
+        /* HEADER */
         header {
             background: linear-gradient(145deg, #ffffff 0%, #f0f5ff 100%);
             box-shadow: 0 4px 20px rgba(0,30,100,0.08);
@@ -72,7 +62,6 @@
             font-size: 32px;
             font-weight: 700;
             box-shadow: 0 8px 16px rgba(24,0,173,0.25);
-            transition: 0.2s;
         }
 
         .logo-text h1 {
@@ -105,11 +94,7 @@
             box-shadow: 0 6px 14px rgba(81,112,255,0.3);
         }
 
-        .badge i {
-            font-size: 1rem;
-        }
-
-        /* seção hero / apresentação */
+        /* HERO */
         .hero {
             padding: 60px 0 40px;
         }
@@ -131,11 +116,6 @@
             color: #1800ad;
             margin-bottom: 20px;
             line-height: 1.2;
-        }
-
-        .hero-content h2 i {
-            color: #5170ff;
-            margin-right: 8px;
         }
 
         .hero-desc {
@@ -190,7 +170,7 @@
             filter: drop-shadow(0 12px 12px rgba(24,0,173,0.2));
         }
 
-        /* cards de especialidade */
+        /* CARDS */
         .specialty {
             margin: 40px 0;
         }
@@ -249,12 +229,7 @@
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: #737373;
-            font-size: 1rem;
-        }
-
-        /* calculadora / tabela de preços interativa */
+        /* PREÇOS */
         .pricing {
             background: white;
             border-radius: 48px 48px 48px 0;
@@ -335,14 +310,6 @@
             color: #737373;
         }
 
-        .price-detail {
-            color: #5170ff;
-            font-weight: 600;
-            border-bottom: 2px dashed #5170ff;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-        }
-
         .btn-calc {
             background: #5170ff;
             color: white;
@@ -363,10 +330,9 @@
 
         .btn-calc:hover {
             background: #1800ad;
-            box-shadow: 0 8px 18px rgba(24,0,173,0.3);
         }
 
-        /* área do simulador com desconto progressivo */
+        /* SIMULADOR - VERSÃO MOBILE FRIENDLY */
         .simulator-box {
             background: linear-gradient(105deg, #f0f7ff 0%, #ffffff 100%);
             border-radius: 40px;
@@ -385,11 +351,72 @@
             margin-bottom: 24px;
         }
 
+        /* CONTROLE DE QUANTIDADE - BOTÕES + E - */
+        .quantidade-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border-radius: 40px;
+            padding: 6px;
+            box-shadow: 0 4px 12px rgba(0,74,173,0.08);
+            border: 1px solid #e0ecff;
+        }
+
+        .btn-qtd {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: #5170ff;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(81,112,255,0.3);
+        }
+
+        .btn-qtd:active {
+            background: #1800ad;
+            transform: scale(0.95);
+        }
+
+        .btn-qtd:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #quantidade {
+            width: 70px;
+            height: 60px;
+            border: 2px solid #5170ff;
+            border-radius: 20px;
+            color: #004aad;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-align: center;
+            background: white;
+            padding: 0 5px;
+            -moz-appearance: textfield;
+        }
+
+        #quantidade::-webkit-outer-spin-button,
+        #quantidade::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         .simulator-controls {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 30px;
+            margin-bottom: 20px;
         }
 
         .input-group {
@@ -400,26 +427,9 @@
         }
 
         .input-group label {
-            font-weight: 600;
-            color: #1800ad;
-        }
-
-        #quantidade {
-            width: 80px;
-            padding: 14px 12px;
-            font-size: 1.3rem;
             font-weight: 700;
-            border: 2px solid #5170ff;
-            border-radius: 20px;
-            color: #004aad;
-            text-align: center;
-            background: white;
-        }
-
-        .tipo-selector {
-            display: flex;
-            gap: 16px;
-            align-items: center;
+            color: #1800ad;
+            font-size: 1.1rem;
         }
 
         .radio-group {
@@ -435,8 +445,14 @@
 
         .radio-group input[type="radio"] {
             accent-color: #1800ad;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .radio-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #004aad;
         }
 
         .result-area {
@@ -452,15 +468,15 @@
         }
 
         .result-text {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             display: flex;
-            align-items: baseline;
+            align-items: center;
             gap: 12px;
         }
 
         .result-price {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 900;
             background: white;
             color: #1800ad;
@@ -469,13 +485,19 @@
             letter-spacing: 2px;
         }
 
-        .disclaimer {
-            font-size: 0.9rem;
-            color: #ddddff;
-            margin-top: 8px;
+        .economia-box {
+            margin-top: 20px;
+            padding: 16px 24px;
+            background: rgba(24,0,173,0.06);
+            border-radius: 40px;
+            font-weight: 700;
+            color: #004aad;
+            border: 2px dashed #5170ff;
+            text-align: center;
+            font-size: 1.2rem;
         }
 
-        /* rodapé */
+        /* FOOTER */
         footer {
             background: #0a1a3a;
             color: #cddaff;
@@ -516,16 +538,15 @@
             color: #5170ff;
         }
 
-        /* responsividade */
+        /* RESPONSIVIDADE */
         @media (max-width: 900px) {
             .hero-grid { flex-direction: column; }
-            .logo-text h1 { font-size: 1.5rem; }
             .header-flex { flex-direction: column; gap: 20px; }
             .logo-area { justify-content: center; }
-            .badge { align-self: center; }
             .pricing-header { flex-direction: column; align-items: start; gap: 16px; }
             .simulator-controls { flex-direction: column; align-items: flex-start; }
             .result-area { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .quantidade-control { width: 100%; justify-content: center; }
         }
 
         @media (max-width: 550px) {
@@ -533,27 +554,17 @@
             .hero-content h2 { font-size: 2rem; }
             .price-base { font-size: 2rem; }
             .result-price { font-size: 1.8rem; }
+            .simulator-box { padding: 24px 20px; }
+            .btn-qtd { width: 56px; height: 56px; } /* Maior no mobile para facilitar toque */
         }
-
-        /* utilitários */
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-2 { margin-top: 8px; }
-        .mb-2 { margin-bottom: 8px; }
     </style>
 </head>
 <body>
 
-    <!-- HEADER COM ESPAÇO PARA LOGO (logo-placeholder) -->
     <header>
         <div class="container header-flex">
             <div class="logo-area">
-                <!-- Espaço para o logo da empresa (B&S Protética) -->
-                <div class="logo-placeholder">
-                    B&S
-                </div>
+                <div class="logo-placeholder">B&S</div>
                 <div class="logo-text">
                     <h1>B&S Protética</h1>
                     <span>Consultoria em Prótese Dentária</span>
@@ -561,13 +572,11 @@
             </div>
             <div class="badge">
                 <i class="fas fa-tooth"></i> Carga Imediata
-                <i class="fas fa-check-circle" style="margin-left: 8px;"></i>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <!-- SEÇÃO DE APRESENTAÇÃO DA CONSULTORIA -->
         <section class="hero">
             <div class="hero-grid">
                 <div class="hero-content">
@@ -593,12 +602,10 @@
                 </div>
                 <div class="hero-image">
                     <i class="fas fa-tooth icon-tooth"></i>
-                    <!-- representação visual de dente / prótese -->
                 </div>
             </div>
         </section>
 
-        <!-- CARD DE CONSULTORIA - ÊNFASE CARGA IMEDIATA -->
         <section class="specialty">
             <h2 class="section-title">Consultoria especializada</h2>
             <div class="card-container">
@@ -610,7 +617,7 @@
                 <div class="card">
                     <i class="fas fa-gem"></i>
                     <h3>Materiais premium</h3>
-                    <p>Trabalhamos com Dente Kruzer (alta performance) e Dente Nacional (custo-benefício). Ambas com certificação.</p>
+                    <p>Trabalhamos com Dente Kruzer e Dente Nacional. Ambas com certificação e qualidade garantida.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-percent"></i>
@@ -620,7 +627,6 @@
             </div>
         </section>
 
-        <!-- TABELA DE PREÇOS + SIMULADOR INTERATIVO (JS) -->
         <section class="pricing">
             <div class="pricing-header">
                 <h2><i class="fas fa-tags" style="color: #004aad; margin-right: 12px;"></i> Tabela de preços</h2>
@@ -629,12 +635,10 @@
                 </div>
             </div>
 
-            <!-- cards estáticos de preço (tabela) -->
             <div class="price-table">
                 <div class="price-col">
                     <div class="tooth-type">Dente Kruzer</div>
                     <div class="price-base">R$ 1.500,00 <small>/peça</small></div>
-                    <div class="price-detail">Alta performance · Zircônia</div>
                     <button class="btn-calc" id="selectKruzerBtn">
                         <i class="fas fa-calculator"></i> Simular desconto
                     </button>
@@ -642,26 +646,31 @@
                 <div class="price-col">
                     <div class="tooth-type">Dente Nacional</div>
                     <div class="price-base">R$ 1.200,00 <small>/peça</small></div>
-                    <div class="price-detail">Custo-benefício · Certificado</div>
                     <button class="btn-calc" id="selectNacionalBtn">
                         <i class="fas fa-calculator"></i> Simular desconto
                     </button>
                 </div>
             </div>
 
-            <!-- SIMULADOR DE DESCONTO 15% A PARTIR DA 2ª PEÇA -->
+            <!-- SIMULADOR COM BOTÕES + E - (MOBILE FRIENDLY) -->
             <div class="simulator-box">
                 <div class="simulator-title">
                     <i class="fas fa-cogs" style="color: #1800ad;"></i> 
-                    Simule seu orçamento progressivo
+                    Simule seu orçamento
                 </div>
+                
                 <div class="simulator-controls">
                     <div class="input-group">
-                        <label for="quantidade"><b>Nº de peças:</b></label>
-                        <input type="number" id="quantidade" min="1" max="20" value="1">
+                        <label>Quantidade:</label>
+                        <div class="quantidade-control">
+                            <button class="btn-qtd" id="btnDiminuir">−</button>
+                            <input type="number" id="quantidade" min="1" max="20" value="1" readonly>
+                            <button class="btn-qtd" id="btnAumentar">+</button>
+                        </div>
                     </div>
+                    
                     <div class="tipo-selector">
-                        <span style="font-weight: 600; color: #004aad;">Tipo de dente:</span>
+                        <span style="font-weight: 700; color: #1800ad; margin-right: 16px;">Tipo:</span>
                         <div class="radio-group">
                             <div>
                                 <input type="radio" id="kruzerRadio" name="tipoDente" value="kruzer" checked>
@@ -675,29 +684,24 @@
                     </div>
                 </div>
 
-                <!-- resultado dinâmico calculado via JS -->
-                <div class="result-area" id="resultArea">
+                <div class="result-area">
                     <div class="result-text">
-                        <i class="fas fa-calculator"></i> Total com desconto:
+                        <i class="fas fa-calculator"></i> Total:
                     </div>
                     <div class="result-price" id="precoFinal">R$ 1.500,00</div>
                 </div>
-                <div class="disclaimer" id="disclaimerMsg">
-                    * 15% off em cada peça a partir da segunda unidade.
-                </div>
-                <div style="margin-top: 16px; font-weight: 600; color: #004aad;" id="economiaMsg">
-                    Você economiza R$ 0,00
-                </div>
-            </div>
 
-            <!-- Exemplo dado no enunciado: 2 peças Kruzer = R$ 2.775,00 (demonstrado) -->
-            <p style="margin-top: 20px; font-style: italic; color: #5170ff; background: #eef3ff; padding: 12px 24px; border-radius: 60px;">
-                <i class="fas fa-info-circle"></i> Exemplo: 2 peças Kruzer → Total R$ 2.775,00 (15% off na 2ª peça)
-            </p>
+                <div class="economia-box" id="economiaMsg">
+                    💰 Peça única: sem desconto
+                </div>
+                
+                <p style="margin-top: 16px; font-style: italic; color: #5170ff; background: #eef3ff; padding: 12px 24px; border-radius: 60px;">
+                    <i class="fas fa-info-circle"></i> Exemplo: 2 peças Kruzer → Total R$ 2.775,00 (15% off na 2ª peça)
+                </p>
+            </div>
         </section>
     </main>
 
-    <!-- RODAPÉ -->
     <footer>
         <div class="container footer-flex">
             <div class="footer-logo">
@@ -717,100 +721,91 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT PARA SIMULADOR DE DESCONTO 15% PROGRESSIVO -->
     <script>
         (function() {
-            'use strict';
-
-            // Preços base
             const PRECO_KRUZER = 1500;
             const PRECO_NACIONAL = 1200;
-            const DESCONTO_PECA_ADICIONAL = 0.15; // 15%
+            const DESCONTO = 0.15;
 
-            // elementos do DOM
             const quantidadeInput = document.getElementById('quantidade');
             const kruzerRadio = document.getElementById('kruzerRadio');
             const nacionalRadio = document.getElementById('nacionalRadio');
             const precoFinalSpan = document.getElementById('precoFinal');
-            const disclaimerMsg = document.getElementById('disclaimerMsg');
             const economiaMsg = document.getElementById('economiaMsg');
+            const btnAumentar = document.getElementById('btnAumentar');
+            const btnDiminuir = document.getElementById('btnDiminuir');
 
-            // botões de atalho para selecionar tipo e focar no simulador
+            // Botões de atalho
             const btnKruzer = document.getElementById('selectKruzerBtn');
             const btnNacional = document.getElementById('selectNacionalBtn');
 
-            // função que calcula preço com desconto progressivo
             function calcularPreco() {
                 let precoUnitario;
-                let tipoDente = '';
-
-                if (kruzerRadio.checked) {
-                    precoUnitario = PRECO_KRUZER;
-                    tipoDente = 'Kruzer';
-                } else {
-                    precoUnitario = PRECO_NACIONAL;
-                    tipoDente = 'Nacional';
-                }
+                let tipoDente = kruzerRadio.checked ? 'Kruzer' : 'Nacional';
+                precoUnitario = kruzerRadio.checked ? PRECO_KRUZER : PRECO_NACIONAL;
 
                 let qtd = parseInt(quantidadeInput.value, 10);
-                // validação: se não for número ou <1, definir 1
-                if (isNaN(qtd) || qtd < 1) {
-                    qtd = 1;
-                    quantidadeInput.value = 1;
-                }
-                if (qtd > 20) {
-                    qtd = 20;
-                    quantidadeInput.value = 20;
-                }
+                if (isNaN(qtd) || qtd < 1) qtd = 1;
+                if (qtd > 20) qtd = 20;
+                quantidadeInput.value = qtd;
 
-                // cálculo do valor total com desconto progressivo: 
-                // 1ª peça = preço cheio; a partir da 2ª = 15% off em cada peça adicional
-                let total = 0;
+                // Habilita/desabilita botões
+                btnDiminuir.disabled = (qtd <= 1);
+                btnAumentar.disabled = (qtd >= 20);
+
+                // Cálculo do total com desconto progressivo
+                let total;
                 if (qtd === 1) {
                     total = precoUnitario;
                 } else {
-                    // primeira peça: 100% do valor
-                    total = precoUnitario;
-                    // demais peças (qtd-1) com 15% de desconto
-                    total += (precoUnitario * (1 - DESCONTO_PECA_ADICIONAL)) * (qtd - 1);
+                    total = precoUnitario + (precoUnitario * (1 - DESCONTO)) * (qtd - 1);
                 }
 
-                // arredondar para 2 casas decimais
                 total = Math.round(total * 100) / 100;
-
-                // calcular economia
                 let precoSemDesconto = precoUnitario * qtd;
                 let economia = precoSemDesconto - total;
                 economia = Math.round(economia * 100) / 100;
 
-                // formatar moeda brasileira
-                const totalFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                const economiaFormatada = economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-                precoFinalSpan.innerText = totalFormatado;
+                precoFinalSpan.innerText = total.toLocaleString('pt-BR', { 
+                    style: 'currency', 
+                    currency: 'BRL' 
+                });
 
                 if (qtd === 1) {
-                    economiaMsg.innerHTML = `🔹 Peça única: sem desconto progressivo.`;
-                    disclaimerMsg.innerHTML = '* Adquira 2 ou mais peças e ganhe 15% OFF em cada dente extra.';
+                    economiaMsg.innerHTML = `💰 Peça única: sem desconto progressivo.`;
                 } else {
-                    economiaMsg.innerHTML = `✅ Você economiza ${economiaFormatada} em relação ao preço cheio.`;
-                    disclaimerMsg.innerHTML = `* ${qtd} peças (${tipoDente}): 1ª integral, ${qtd-1} peça(s) com 15% off cada.`;
+                    economiaMsg.innerHTML = `✅ Você economiza ${economia.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    })} em relação ao preço cheio!`;
                 }
-
-                // exibe o exemplo exato do enunciado: 2 peças Kruzer = R$ 2.775,00
-                // apenas para referência visual não modifica o cálculo, mas é fiel.
             }
 
-            // adicionar listeners para atualizar sempre que mudar
-            quantidadeInput.addEventListener('input', calcularPreco);
+            // Eventos dos botões + e -
+            btnAumentar.addEventListener('click', function() {
+                let qtd = parseInt(quantidadeInput.value, 10);
+                if (qtd < 20) {
+                    quantidadeInput.value = qtd + 1;
+                    calcularPreco();
+                }
+            });
+
+            btnDiminuir.addEventListener('click', function() {
+                let qtd = parseInt(quantidadeInput.value, 10);
+                if (qtd > 1) {
+                    quantidadeInput.value = qtd - 1;
+                    calcularPreco();
+                }
+            });
+
+            // Eventos de mudança nos radios
             kruzerRadio.addEventListener('change', calcularPreco);
             nacionalRadio.addEventListener('change', calcularPreco);
 
-            // atalho dos botões da tabela: seleciona o radio e foca no simulador
+            // Atalhos dos cards de preço
             btnKruzer.addEventListener('click', function() {
                 kruzerRadio.checked = true;
                 calcularPreco();
-                // rolar suavemente até o simulador
                 document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -820,20 +815,9 @@
                 document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
             });
 
-            // também escuta mudança no input número
-            quantidadeInput.addEventListener('change', function() {
-                let val = parseInt(this.value, 10);
-                if (val < 1) this.value = 1;
-                if (val > 20) this.value = 20;
-                calcularPreco();
-            });
-
-            // inicializar com valores padrão (Kruzer, 1 peça)
+            // Inicializa
             calcularPreco();
         })();
     </script>
-
-    <!-- Nota: o logo é um espaço reservado. B&S Protética já está visível no cabeçalho -->
-    <!-- Todas as cores da paleta: #737373 (texto), #1800ad, #004aad, #5170ff estão aplicadas -->
 </body>
 </html>
