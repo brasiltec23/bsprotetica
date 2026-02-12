@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>B&S Protética · Consultoria em Prótese Dentária</title>
+    <!-- Fonte moderna e limpa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones gratuitos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ----- PALETA DE CORES ----- 
+            font principal: #737373 (texto)
+            azul 1: #1800ad
+            azul 2: #004aad
+            azul 3: #5170ff
+            fundo claro: #f8faff
+            branco: #ffffff
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #737373; /* tom de texto principal */
+            background-color: #f8faff;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* cabeçalho com espaço para logo */
+        header {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f5ff 100%);
+            box-shadow: 0 4px 20px rgba(0,30,100,0.08);
+            padding: 20px 0;
+            border-bottom: 4px solid #5170ff;
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, #1800ad, #004aad);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            box-shadow: 0 8px 16px rgba(24,0,173,0.25);
+            transition: 0.2s;
+        }
+
+        .logo-text h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1800ad;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: #004aad;
+            font-weight: 600;
+            font-size: 1rem;
+            display: block;
+            margin-top: 4px;
+            letter-spacing: 1.5px;
+        }
+
+        .badge {
+            background-color: #5170ff;
+            border-radius: 40px;
+            padding: 8px 18px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 14px rgba(81,112,255,0.3);
+        }
+
+        .badge i {
+            font-size: 1rem;
+        }
+
+        /* seção hero / apresentação */
+        .hero {
+            padding: 60px 0 40px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1 1 45%;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1800ad;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h2 i {
+            color: #5170ff;
+            margin-right: 8px;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #004aad;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border-left: 6px solid #5170ff;
+            padding-left: 20px;
+            background: rgba(81,112,255,0.04);
+            border-radius: 0 16px 16px 0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 32px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1800ad;
+        }
+
+        .stat-label {
+            color: #737373;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            flex: 1 1 40%;
+            background: linear-gradient(145deg, #eef4ff, #ffffff);
+            border-radius: 40px 40px 40px 0;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 30px rgba(0,74,173,0.1);
+            border: 1px solid rgba(81,112,255,0.2);
+        }
+
+        .icon-tooth {
+            font-size: 120px;
+            color: #5170ff;
+            filter: drop-shadow(0 12px 12px rgba(24,0,173,0.2));
+        }
+
+        /* cards de especialidade */
+        .specialty {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #004aad;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #1800ad, #5170ff);
+            border-radius: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            flex: 1 1 280px;
+            padding: 30px 24px;
+            border-radius: 32px;
+            box-shadow: 0 16px 30px rgba(0,74,173,0.06);
+            border-bottom: 6px solid #5170ff;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card i {
+            font-size: 44px;
+            color: #1800ad;
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #004aad;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #737373;
+            font-size: 1rem;
+        }
+
+        /* calculadora / tabela de preços interativa */
+        .pricing {
+            background: white;
+            border-radius: 48px 48px 48px 0;
+            padding: 48px 32px;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(0,74,173,0.08);
+            border: 1px solid #e0ecff;
+        }
+
+        .pricing-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .pricing-header h2 {
+            font-size: 2rem;
+            color: #1800ad;
+            font-weight: 700;
+        }
+
+        .discount-badge {
+            background: #004aad;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .price-table {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .price-col {
+            flex: 1 1 280px;
+            background: #f9fbff;
+            border-radius: 32px;
+            padding: 32px 24px;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+        }
+
+        .price-col:hover {
+            border-color: #5170ff;
+            background: white;
+        }
+
+        .tooth-type {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1800ad;
+            margin-bottom: 8px;
+        }
+
+        .price-base {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #004aad;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin: 16px 0 8px;
+        }
+
+        .price-base small {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #737373;
+        }
+
+        .price-detail {
+            color: #5170ff;
+            font-weight: 600;
+            border-bottom: 2px dashed #5170ff;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .btn-calc {
+            background: #5170ff;
+            color: white;
+            border: none;
+            padding: 14px 0;
+            width: 100%;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn-calc:hover {
+            background: #1800ad;
+            box-shadow: 0 8px 18px rgba(24,0,173,0.3);
+        }
+
+        /* área do simulador com desconto progressivo */
+        .simulator-box {
+            background: linear-gradient(105deg, #f0f7ff 0%, #ffffff 100%);
+            border-radius: 40px;
+            padding: 32px 36px;
+            margin-top: 32px;
+            border-left: 10px solid #1800ad;
+        }
+
+        .simulator-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #004aad;
+            margin-bottom: 24px;
+        }
+
+        .simulator-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: #1800ad;
+        }
+
+        #quantidade {
+            width: 80px;
+            padding: 14px 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: 2px solid #5170ff;
+            border-radius: 20px;
+            color: #004aad;
+            text-align: center;
+            background: white;
+        }
+
+        .tipo-selector {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 24px;
+        }
+
+        .radio-group div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-group input[type="radio"] {
+            accent-color: #1800ad;
+            width: 18px;
+            height: 18px;
+        }
+
+        .result-area {
+            background: #1800ad;
+            padding: 24px 32px;
+            border-radius: 60px 20px 60px 20px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .result-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .result-price {
+            font-size: 2.4rem;
+            font-weight: 900;
+            background: white;
+            color: #1800ad;
+            padding: 8px 24px;
+            border-radius: 60px;
+            letter-spacing: 2px;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #ddddff;
+            margin-top: 8px;
+        }
+
+        /* rodapé */
+        footer {
+            background: #0a1a3a;
+            color: #cddaff;
+            padding: 48px 0 32px;
+            margin-top: 80px;
+            border-top: 6px solid #5170ff;
+        }
+
+        .footer-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo h3 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            color: #a0bdff;
+        }
+
+        .social {
+            display: flex;
+            gap: 24px;
+            font-size: 1.8rem;
+        }
+
+        .social a {
+            color: white;
+            transition: 0.2s;
+        }
+
+        .social a:hover {
+            color: #5170ff;
+        }
+
+        /* responsividade */
+        @media (max-width: 900px) {
+            .hero-grid { flex-direction: column; }
+            .logo-text h1 { font-size: 1.5rem; }
+            .header-flex { flex-direction: column; gap: 20px; }
+            .logo-area { justify-content: center; }
+            .badge { align-self: center; }
+            .pricing-header { flex-direction: column; align-items: start; gap: 16px; }
+            .simulator-controls { flex-direction: column; align-items: flex-start; }
+            .result-area { flex-direction: column; align-items: flex-start; gap: 16px; }
+        }
+
+        @media (max-width: 550px) {
+            .container { padding: 0 20px; }
+            .hero-content h2 { font-size: 2rem; }
+            .price-base { font-size: 2rem; }
+            .result-price { font-size: 1.8rem; }
+        }
+
+        /* utilitários */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 { margin-top: 8px; }
+        .mb-2 { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER COM ESPAÇO PARA LOGO (logo-placeholder) -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo-area">
+                <!-- Espaço para o logo da empresa (B&S Protética) -->
+                <div class="logo-placeholder">
+                    B&S
+                </div>
+                <div class="logo-text">
+                    <h1>B&S Protética</h1>
+                    <span>Consultoria em Prótese Dentária</span>
+                </div>
+            </div>
+            <div class="badge">
+                <i class="fas fa-tooth"></i> Carga Imediata
+                <i class="fas fa-check-circle" style="margin-left: 8px;"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- SEÇÃO DE APRESENTAÇÃO DA CONSULTORIA -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h2><i class="fas fa-bolt" style="color: #5170ff;"></i> Carga Imediata<br>com excelência</h2>
+                    <p class="hero-desc">
+                        Especialistas em prótese dentária sobre implante. Agilidade, estética e ajuste perfeito para seu paciente. 
+                        Nossa consultoria transforma o seu laboratório.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">+12 anos</span>
+                            <span class="stat-label">experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">+500</span>
+                            <span class="stat-label">casos carga imediata</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15%</span>
+                            <span class="stat-label">off a partir da 2ª peça</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-tooth icon-tooth"></i>
+                    <!-- representação visual de dente / prótese -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CARD DE CONSULTORIA - ÊNFASE CARGA IMEDIATA -->
+        <section class="specialty">
+            <h2 class="section-title">Consultoria especializada</h2>
+            <div class="card-container">
+                <div class="card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Carga Imediata</h3>
+                    <p>Planejamento digital, escolha de materiais e acompanhamento técnico. Redução de tempo e previsibilidade total.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gem"></i>
+                    <h3>Materiais premium</h3>
+                    <p>Trabalhamos com Dente Kruzer (alta performance) e Dente Nacional (custo-benefício). Ambas com certificação.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-percent"></i>
+                    <h3>Desconto progressivo</h3>
+                    <p>Na compra de múltiplas peças, 15% off em cada dente adicional. Vantagem real para o seu laboratório.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA DE PREÇOS + SIMULADOR INTERATIVO (JS) -->
+        <section class="pricing">
+            <div class="pricing-header">
+                <h2><i class="fas fa-tags" style="color: #004aad; margin-right: 12px;"></i> Tabela de preços</h2>
+                <div class="discount-badge">
+                    <i class="fas fa-gift"></i> 15% OFF a partir da 2ª peça
+                </div>
+            </div>
+
+            <!-- cards estáticos de preço (tabela) -->
+            <div class="price-table">
+                <div class="price-col">
+                    <div class="tooth-type">Dente Kruzer</div>
+                    <div class="price-base">R$ 1.500,00 <small>/peça</small></div>
+                    <div class="price-detail">Alta performance · Zircônia</div>
+                    <button class="btn-calc" id="selectKruzerBtn">
+                        <i class="fas fa-calculator"></i> Simular desconto
+                    </button>
+                </div>
+                <div class="price-col">
+                    <div class="tooth-type">Dente Nacional</div>
+                    <div class="price-base">R$ 1.200,00 <small>/peça</small></div>
+                    <div class="price-detail">Custo-benefício · Certificado</div>
+                    <button class="btn-calc" id="selectNacionalBtn">
+                        <i class="fas fa-calculator"></i> Simular desconto
+                    </button>
+                </div>
+            </div>
+
+            <!-- SIMULADOR DE DESCONTO 15% A PARTIR DA 2ª PEÇA -->
+            <div class="simulator-box">
+                <div class="simulator-title">
+                    <i class="fas fa-cogs" style="color: #1800ad;"></i> 
+                    Simule seu orçamento progressivo
+                </div>
+                <div class="simulator-controls">
+                    <div class="input-group">
+                        <label for="quantidade"><b>Nº de peças:</b></label>
+                        <input type="number" id="quantidade" min="1" max="20" value="1">
+                    </div>
+                    <div class="tipo-selector">
+                        <span style="font-weight: 600; color: #004aad;">Tipo de dente:</span>
+                        <div class="radio-group">
+                            <div>
+                                <input type="radio" id="kruzerRadio" name="tipoDente" value="kruzer" checked>
+                                <label for="kruzerRadio">Kruzer (R$1500)</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="nacionalRadio" name="tipoDente" value="nacional">
+                                <label for="nacionalRadio">Nacional (R$1200)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- resultado dinâmico calculado via JS -->
+                <div class="result-area" id="resultArea">
+                    <div class="result-text">
+                        <i class="fas fa-calculator"></i> Total com desconto:
+                    </div>
+                    <div class="result-price" id="precoFinal">R$ 1.500,00</div>
+                </div>
+                <div class="disclaimer" id="disclaimerMsg">
+                    * 15% off em cada peça a partir da segunda unidade.
+                </div>
+                <div style="margin-top: 16px; font-weight: 600; color: #004aad;" id="economiaMsg">
+                    Você economiza R$ 0,00
+                </div>
+            </div>
+
+            <!-- Exemplo dado no enunciado: 2 peças Kruzer = R$ 2.775,00 (demonstrado) -->
+            <p style="margin-top: 20px; font-style: italic; color: #5170ff; background: #eef3ff; padding: 12px 24px; border-radius: 60px;">
+                <i class="fas fa-info-circle"></i> Exemplo: 2 peças Kruzer → Total R$ 2.775,00 (15% off na 2ª peça)
+            </p>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container footer-flex">
+            <div class="footer-logo">
+                <h3>B&S<span>Protética</span></h3>
+                <p style="color: #b3c6ff; margin-top: 8px;">Consultoria em prótese dentária · Carga imediata</p>
+                <p style="color: #91a6ff; margin-top: 16px;"><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
+                <p style="color: #91a6ff;"><i class="fas fa-envelope"></i> contato@bsprotetica.com.br</p>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 48px; border-top: 1px solid #31508f; padding-top: 24px; color: #afc0ff;">
+            &copy; 2025 B&S Protética · Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA SIMULADOR DE DESCONTO 15% PROGRESSIVO -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Preços base
+            const PRECO_KRUZER = 1500;
+            const PRECO_NACIONAL = 1200;
+            const DESCONTO_PECA_ADICIONAL = 0.15; // 15%
+
+            // elementos do DOM
+            const quantidadeInput = document.getElementById('quantidade');
+            const kruzerRadio = document.getElementById('kruzerRadio');
+            const nacionalRadio = document.getElementById('nacionalRadio');
+            const precoFinalSpan = document.getElementById('precoFinal');
+            const disclaimerMsg = document.getElementById('disclaimerMsg');
+            const economiaMsg = document.getElementById('economiaMsg');
+
+            // botões de atalho para selecionar tipo e focar no simulador
+            const btnKruzer = document.getElementById('selectKruzerBtn');
+            const btnNacional = document.getElementById('selectNacionalBtn');
+
+            // função que calcula preço com desconto progressivo
+            function calcularPreco() {
+                let precoUnitario;
+                let tipoDente = '';
+
+                if (kruzerRadio.checked) {
+                    precoUnitario = PRECO_KRUZER;
+                    tipoDente = 'Kruzer';
+                } else {
+                    precoUnitario = PRECO_NACIONAL;
+                    tipoDente = 'Nacional';
+                }
+
+                let qtd = parseInt(quantidadeInput.value, 10);
+                // validação: se não for número ou <1, definir 1
+                if (isNaN(qtd) || qtd < 1) {
+                    qtd = 1;
+                    quantidadeInput.value = 1;
+                }
+                if (qtd > 20) {
+                    qtd = 20;
+                    quantidadeInput.value = 20;
+                }
+
+                // cálculo do valor total com desconto progressivo: 
+                // 1ª peça = preço cheio; a partir da 2ª = 15% off em cada peça adicional
+                let total = 0;
+                if (qtd === 1) {
+                    total = precoUnitario;
+                } else {
+                    // primeira peça: 100% do valor
+                    total = precoUnitario;
+                    // demais peças (qtd-1) com 15% de desconto
+                    total += (precoUnitario * (1 - DESCONTO_PECA_ADICIONAL)) * (qtd - 1);
+                }
+
+                // arredondar para 2 casas decimais
+                total = Math.round(total * 100) / 100;
+
+                // calcular economia
+                let precoSemDesconto = precoUnitario * qtd;
+                let economia = precoSemDesconto - total;
+                economia = Math.round(economia * 100) / 100;
+
+                // formatar moeda brasileira
+                const totalFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                const economiaFormatada = economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+                precoFinalSpan.innerText = totalFormatado;
+
+                if (qtd === 1) {
+                    economiaMsg.innerHTML = `🔹 Peça única: sem desconto progressivo.`;
+                    disclaimerMsg.innerHTML = '* Adquira 2 ou mais peças e ganhe 15% OFF em cada dente extra.';
+                } else {
+                    economiaMsg.innerHTML = `✅ Você economiza ${economiaFormatada} em relação ao preço cheio.`;
+                    disclaimerMsg.innerHTML = `* ${qtd} peças (${tipoDente}): 1ª integral, ${qtd-1} peça(s) com 15% off cada.`;
+                }
+
+                // exibe o exemplo exato do enunciado: 2 peças Kruzer = R$ 2.775,00
+                // apenas para referência visual não modifica o cálculo, mas é fiel.
+            }
+
+            // adicionar listeners para atualizar sempre que mudar
+            quantidadeInput.addEventListener('input', calcularPreco);
+            kruzerRadio.addEventListener('change', calcularPreco);
+            nacionalRadio.addEventListener('change', calcularPreco);
+
+            // atalho dos botões da tabela: seleciona o radio e foca no simulador
+            btnKruzer.addEventListener('click', function() {
+                kruzerRadio.checked = true;
+                calcularPreco();
+                // rolar suavemente até o simulador
+                document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnNacional.addEventListener('click', function() {
+                nacionalRadio.checked = true;
+                calcularPreco();
+                document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // também escuta mudança no input número
+            quantidadeInput.addEventListener('change', function() {
+                let val = parseInt(this.value, 10);
+                if (val < 1) this.value = 1;
+                if (val > 20) this.value = 20;
+                calcularPreco();
+            });
+
+            // inicializar com valores padrão (Kruzer, 1 peça)
+            calcularPreco();
+        })();
+    </script>
+
+    <!-- Nota: o logo é um espaço reservado. B&S Protética já está visível no cabeçalho -->
+    <!-- Todas as cores da paleta: #737373 (texto), #1800ad, #004aad, #5170ff estão aplicadas -->
+</body>
+</html>
