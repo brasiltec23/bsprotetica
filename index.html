@@ -944,50 +944,6 @@
             const btnKruzer = document.getElementById('selectKruzerBtn');
             const btnNacional = document.getElementById('selectNacionalBtn');
 
-            // Lógica do vídeo
-            const video = document.getElementById('clienteVideo');
-            const playBtn = document.getElementById('playBtn');
-            
-            if (playBtn && video) {
-                // Mostra botão de play apenas se o vídeo estiver pausado
-                video.addEventListener('play', function() {
-                    playBtn.classList.add('hidden');
-                });
-
-                video.addEventListener('pause', function() {
-                    // Só mostra o botão se o vídeo não tiver terminado
-                    if (!video.ended) {
-                        playBtn.classList.remove('hidden');
-                    }
-                });
-
-                video.addEventListener('ended', function() {
-                    playBtn.classList.remove('hidden');
-                });
-
-                // Se o vídeo começar já carregado e pausado, mostra o botão
-                if (video.paused) {
-                    playBtn.classList.remove('hidden');
-                }
-
-                // Clique no botão de play customizado
-                playBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (video.paused) {
-                        video.play();
-                    }
-                });
-
-                // Previne que o clique no vídeo (que também dá play/pause) cause conflitos
-                video.addEventListener('click', function() {
-                    if (video.paused) {
-                        playBtn.classList.add('hidden');
-                    } else {
-                        playBtn.classList.remove('hidden');
-                    }
-                });
-            }
-
             function calcularPreco() {
                 let precoUnitario;
                 let tipoDente = kruzerRadio.checked ? 'Kruzer' : 'Nacional';
@@ -1051,4 +1007,22 @@
             kruzerRadio.addEventListener('change', calcularPreco);
             nacionalRadio.addEventListener('change', calcularPreco);
 
-            //
+            // Atalhos dos cards de preço
+            btnKruzer.addEventListener('click', function() {
+                kruzerRadio.checked = true;
+                calcularPreco();
+                document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            btnNacional.addEventListener('click', function() {
+                nacionalRadio.checked = true;
+                calcularPreco();
+                document.querySelector('.simulator-box').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Inicializa
+            calcularPreco();
+        })();
+    </script>
+</body>
+</html>
